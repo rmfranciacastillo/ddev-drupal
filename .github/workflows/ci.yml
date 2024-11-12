@@ -1,0 +1,45 @@
+name: CI - Test Drupal Modules and JS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install DDEV
+      run: |
+        curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash
+        ddev poweroff
+
+    - name: Start DDEV and Install Drupal
+      env:
+        DDEV_NONINTERACTIVE: true
+      run: |
+        ddev start
+        ddev exec "drush site:install -y"
+        ddev exec "drush en <your_module_name> -y"  # Enable your custom module(s)
+        ddev exec "drush cr"  # Clear caches if necessary
+
+    - name: Run PHPUnit Tests
+      run: |
+        ddev exec "phpunit --configuration web/core/phpunit.xml"
+
+    - name: Run JavaScript Tests
+      run: |
+        ddev exec "npm install"  # Install JS dependencies if needed
+        ddev exec "npm test"  # Run JS tests (adjust according to your setup)
+
+    - name: Stop DDEV
+      if: always()
+      run: ddev stop
+
