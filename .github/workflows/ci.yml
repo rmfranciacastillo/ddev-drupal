@@ -26,13 +26,14 @@ jobs:
         DDEV_NONINTERACTIVE: true
       run: |
         ddev start
+        ddev composer install
         ddev exec "drush site:install -y"
-        ddev exec "drush en <your_module_name> -y"  # Enable your custom module(s)
+        ddev exec "drush en page_example -y"  # Enable your custom module(s)
         ddev exec "drush cr"  # Clear caches if necessary
 
     - name: Run PHPUnit Tests
       run: |
-        ddev exec "phpunit --configuration web/core/phpunit.xml"
+        ddev exec "phpunit -c web/core/phpunit.xml.dist web/modules/contrib/examples/modules/page_example"
 
     - name: Run JavaScript Tests
       run: |
@@ -42,4 +43,3 @@ jobs:
     - name: Stop DDEV
       if: always()
       run: ddev stop
-
