@@ -1,5 +1,5 @@
 // tests/jasmine/spec/exampleSpec.js
-//import { addNumbers } from '../../../../src/js/example.js';
+import { addNumbers } from '../../../../src/js/example.js';
 
 describe("A suite", function() {
     it("contains a spec with an expectation", function() {
@@ -7,7 +7,6 @@ describe("A suite", function() {
     });
 });
 
-/*
 describe("addNumbers", function () {
   it("should add two numbers correctly", function () {
     expect(addNumbers(1, 2)).toBe(3);
@@ -19,4 +18,4 @@ describe("addNumbers", function () {
   });
 });
 
-*/
+

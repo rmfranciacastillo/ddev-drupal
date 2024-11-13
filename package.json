@@ -2,6 +2,7 @@
   "devDependencies": {
     "jasmine": "^5.4.0"
   },
+  "type": "module",
   "name": "ddev-drupal",
   "version": "1.0.0",
   "main": "index.js",
