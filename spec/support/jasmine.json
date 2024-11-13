@@ -1,0 +1,11 @@
+{
+  "spec_dir": "web",
+  "spec_files": [
+    "modules/custom/**/*.spec.js",
+    "themes/custom/**/*.spec.js"
+  ],
+  "helpers": [],
+  "stopSpecOnExpectationFailure": false,
+  "random": false
+}
+

@@ -37,8 +37,8 @@ jobs:
 
     - name: Run JavaScript Tests
       run: |
-        ddev exec "npm install"  # Install JS dependencies if needed
-        ddev exec "npm test"  # Run JS tests (adjust according to your setup)
+        ddev exec "npm install"
+        ddev exec "npm run test"
 
     - name: Stop DDEV
       if: always()
