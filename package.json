@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "jasmine": "^5.4.0"
+    "jasmine": "^5.4.0",
+    "nyc": "^17.1.0"
   },
   "type": "module",
   "name": "ddev-drupal",
@@ -40,7 +41,8 @@
     "wrap-ansi-cjs": "^7.0.0"
   },
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "coverage": "nyc npm test"
   },
   "repository": {
     "type": "git",

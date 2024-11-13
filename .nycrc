@@ -1,0 +1,8 @@
+{
+  "include": ["web/modules/custom/**/*.js", "web/themes/custom/**/*.js"],
+  "exclude": ["**/*.spec.js"],
+  "reporter": ["text", "html"],
+  "all": true,
+  "extension": [".js"]
+}
+

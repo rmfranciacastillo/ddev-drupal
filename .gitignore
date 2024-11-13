@@ -5,6 +5,8 @@
 # local bins
 /bin/*
 /node_modules/*
+/coverage/*
+.nyc_output/*
 
 # Ignore configuration files that may contain sensitive information
 /sites/*/*settings*.php
