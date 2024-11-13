@@ -33,7 +33,7 @@ jobs:
 
     - name: Run PHPUnit Tests
       run: |
-        ddev exec "phpunit -c web/core/phpunit.xml.dist web/modules/contrib/examples/modules/page_example"
+        ddev exec "phpunit -c web/core/phpunit.xml.dist web/modules/custom"
 
     - name: Run JavaScript Tests
       run: |
